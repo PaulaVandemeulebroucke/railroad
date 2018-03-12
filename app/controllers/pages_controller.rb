@@ -3,5 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @offers = Offer.all
+    @offer = Offer.new
   end
 end

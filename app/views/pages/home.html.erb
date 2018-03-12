@@ -12,8 +12,10 @@
 <!--   <p>
     <span id="banner-typed-text"></span>
   </p>
+
   <button id="sweet-alert-demo" class="btn btn-primary">Click me!</button>
   <#%= select_tag "timezone", options_from_collection_for_select(
+
         ActiveSupport::TimeZone.all.
         map { |tz| tz.tzinfo }.
         sort_by { |tzinfo| tzinfo.name },
