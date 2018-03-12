@@ -1,2 +1,13 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="home-banner">
+  <h2>Welcome to Railroad</h2>
+  <p>
+    <span id="banner-typed-text"></span>
+  </p>
+  <button id="sweet-alert-demo" class="btn btn-primary">Click me!</button>
+  <%= select_tag "timezone", options_from_collection_for_select(
+        ActiveSupport::TimeZone.all.
+        map { |tz| tz.tzinfo }.
+        sort_by { |tzinfo| tzinfo.name },
+        :name, :name),
+        class: 'select2' %>
+</div>
