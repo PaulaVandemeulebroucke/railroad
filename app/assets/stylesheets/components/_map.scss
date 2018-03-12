@@ -1,0 +1,16 @@
+.main-container {
+  display: flex;
+}
+#map {
+  flex: 0 0 450px;
+  height: 100vh;
+  position: sticky !important;
+}
+.cards-container {
+  padding: 10px;
+}
+.card {
+  margin: 10px;
+  font-size: 20px;
+  box-shadow: 1px 1px 1px 1px rgba(200, 200, 200, .8)
+}
