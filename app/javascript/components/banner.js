@@ -3,7 +3,7 @@ import Typed from 'typed.js';
 
 function loadDynamicBannerText() {
   new Typed('#banner-typed-text', {
-    strings: ["Stop wasting time", "use <strong>tags</strong>"],
+    strings: ["CHOOSE YOUR FUTUR", "<strong>GET A COACH</strong>"],
     typeSpeed: 50,
     loop: true
   });
