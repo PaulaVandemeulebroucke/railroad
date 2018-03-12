@@ -1,4 +1,5 @@
 Arguments: 
+
   /usr/local/Cellar/node/9.8.0/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js check --integrity
 
 PATH: 
@@ -12,6 +13,7 @@ Node version:
 
 Platform: 
   darwin x64
+
 
 npm manifest: 
   {
@@ -6105,4 +6107,5 @@ Trace:
       at Generator.next (<anonymous>)
       at step (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:98:30)
       at /usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:109:13
+
       at <anonymous>
