@@ -17,6 +17,11 @@ class OffersController < ApplicationController
     authorize @offer
   end
 
+  def edit
+    @offer = Offer.find(params[:id])
+    authorize @offer
+  end
+
   def create
     @offer = Offer.new(offer_params)
     @offer.user = current_user
@@ -33,8 +38,6 @@ class OffersController < ApplicationController
     @offer.destroy
     redirect_to offer_path(@offer)
   end
-
-
 
 private
 
