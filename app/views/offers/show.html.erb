@@ -1,20 +1,28 @@
 
 <div class="product">
   <div class="pros-header">
-    <h1 class="pros-header-font"> Notre conseiller: <%= @offer.user.first_name %> <%= @offer.user.last_name %></h1>
-    <h2>Entreprise: <strong><%= @offer.user.first_name %></strong></h2>
+    <% if @offer.photo.file.nil? %>
+      <% @url = "https://images.unsplash.com/photo-1506967236291-3d3c4ad88abd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8966dd3034be8631151ec07601acfa02&auto=format&fit=crop&w=2849&q=80" %>
+    <% else %>
+      <% @url = cl_image_path @offer.photo %>
+    <% end %>
+    <div class="photo-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= @url %>')">
+      <div class="photo-banner-content">
+        <h1 id="offer-banner-title"><%= @offer.company_name %></h1>
+        <p><%= @offer.user.phone_number %> | <%= @offer.user.email %> | <%= @offer.address %></p>
+      </div>
+    </div>
   </div>
 
   <div class="main-container container">
     <div class="row">
       <div class="col-xs-8">
         <div class= "description-block">
-          <h2> conseiller</h2>
-          <div class="col-lg-4"><p> conseiller</p></div>
-          <div class="col-lg-4"><p> conseiller</p></div>
-          <div class="col-lg-4"><p> conseiller</p></div>
+          <h2>Notre offre</h2>
+          <p><%= @offer.description %></p>
         </div>
       </div>
+
       <div class="col-xs-4">
         <div class="booking-block">
           <h2>Réserver cette offre</h2>
