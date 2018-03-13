@@ -12,7 +12,9 @@
   <body>
     <%= render 'shared/flashes' %>
     <%= render 'shared/navbar' %>
-    <%= yield %>
+    <div class="wrapper <%= "marged-top" unless params[:action] == "home" %>">
+      <%= yield %>
+    </div>
     <%= render 'shared/footer' %>
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 
