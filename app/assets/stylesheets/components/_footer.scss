@@ -1,0 +1,42 @@
+
+.footer {
+  background: #665f9a;
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  position: absolute;
+  opacity: 0.6;
+  padding: 0px 50px;
+  color: #ebd3d4;
+  padding-top: 5px;
+  width: 100%;
+}
+.footer-links {
+  color: #ebd3d4;
+  display: flex;
+  align-items: right;
+}
+.footer-links a {
+  color: #ebd3d4;
+  opacity: 0.85;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 0px;
+}
+.footer-links a:hover {
+  opacity: 1;
+}
+
+.footer-contact {
+margin-top: 14px;
+font-size: 12px;
+color: #ebd3d4;
+
+}
+
+.footer-copyright a {
+color: #ebd3d4;
+align-items: right;
+opacity: 1;
+}
+

@@ -1,0 +1,16 @@
+<h1>Liste des rendez-vous</h1>
+
+<ul>
+  <% @bookings.each do |booking| %>
+    <li><%= booking.date %></li>
+    <li><%= booking.status %></li>
+    <li><%= booking.last_name %></li>
+    <li><%= booking.first_name %></li>
+    <li><%= booking.phone_number %></li>
+    <li>
+      <% if booking.status == "pending" %>
+        "bouton accepter A ECRIRE"
+      <% end %>
+    </li>
+  <% end %>
+</ul>

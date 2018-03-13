@@ -1,16 +1,30 @@
 <h1>Tous les conseillers:</h1>
+
+
 <div class="main-container">
-<div class="row">
+
+  <div class="row">
     <% @offers.each do |offer| %>
       <div class="col-xs-12 col-sm-4" id="pic">
-        <div class="card">
-            <%#= cl_image_tag cocktail.photo, height: 250, width: 250, crop: :fill %>
-              <h2><%= link_to offer.company_name, offer_path(offer) %></h2>
-              <p><%= offer.description %></p>
-              <%= link_to offer_path(offer), method: :delete do %>
+        <% if offer.photo.file.nil? %>
+          <% url =  "https://images.unsplash.com/photo-1506967236291-3d3c4ad88abd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8966dd3034be8631151ec07601acfa02&auto=format&fit=crop&w=2849&q=80"%>
+        <% else %>
+          <% url =  cl_image_path offer.photo, height: 300, width: 400, crop: :fill%>
+        <% end %>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= url %>')">
+
+              <% if policy(offer).edit? %>
+                <%= link_to "edit", edit_offer_path(offer), class: "btn btn-primary card-btn" %>
+                <%= link_to offer_path(offer), method: :delete do %>
                   <i class="fa fa-trash-alt"></i>
+                <% end %>
               <% end %>
+              <div class="card-description">
+              <h2><%= link_to offer.company_name, offer_path(offer) %></h2>
+              <p><%= offer.description.first(70) %>...</p>
+          </div>
         </div>
+
       </div>
     <% end %>
   </div>
@@ -35,4 +49,3 @@
   <script async defer
      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzER7O10ZOUp7FloJzMe2r8X1GIQhgt7Q&callback=initMap">
   </script>
-
