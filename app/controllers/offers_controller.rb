@@ -28,6 +28,13 @@ class OffersController < ApplicationController
     end
   end
 
+  def destroy
+    @offer = Offer.find(params[:id])
+    @offer.destroy
+    redirect_to offer_path(@offer)
+  end
+
+
 
 private
 
