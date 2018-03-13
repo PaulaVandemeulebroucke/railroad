@@ -9,6 +9,10 @@ class OfferPolicy < ApplicationPolicy
     create?
   end
 
+  def edit?
+    is_user_the_creator?
+  end
+
   def create?
     return true
   end
