@@ -1,14 +1,38 @@
 <h1>Tous les conseillers:</h1>
-
-<!--   <div class="row">
-    <%# @cocktails.each do |cocktail| %>
+<div class="main-container">
+<div class="row">
+    <% @offers.each do |offer| %>
       <div class="col-xs-12 col-sm-4" id="pic">
         <div class="card">
             <%#= cl_image_tag cocktail.photo, height: 250, width: 250, crop: :fill %>
-            <h2><%#= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+              <h2><%= link_to offer.company_name, offer_path(offer) %></h2>
+              <p><%= offer.description %></p>
+              <%= link_to offer_path(offer), method: :delete do %>
+                  <i class="fa fa-trash-alt"></i>
+              <% end %>
         </div>
       </div>
-    <%# end %>
+    <% end %>
   </div>
-</div> -->
+
+  <div id="map" ></div>
+  <script>
+       function initMap() {
+         // Create a map object and specify the DOM element for display.
+         var map = new google.maps.Map(document.getElementById('map'), {
+           center: {lat: 52.5206, lng: 13.4098},
+           scrollwheel: false,
+           zoom: 8
+         });
+       }
+  </script>
+  </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- Gmaps JavaScript -->
+  <script async defer
+     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzER7O10ZOUp7FloJzMe2r8X1GIQhgt7Q&callback=initMap">
+  </script>
 
