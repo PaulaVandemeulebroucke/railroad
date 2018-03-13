@@ -1,0 +1,7 @@
+<h1>list of appointments</h1>
+
+<ul>
+  <% @bookings.each do |booking| %>
+    <li><%= booking.description %></li>
+  <% end %>
+</ul>
