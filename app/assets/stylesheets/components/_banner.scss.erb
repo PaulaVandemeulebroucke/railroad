@@ -4,7 +4,7 @@
   height: 100vh;
   color: #eee;
   text-align: center;
-  padding-top: 40vh;
+  // padding-top: 40vh;
 }
 
 .home-banner-create {
@@ -25,11 +25,16 @@
   font-size:30px;
 }
 .card-banner{
-  background-image: url(<%= asset_path('card.jpg') %>);
+  background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= asset_path('card.jpg') %>);
   background-size: cover;
   height: 100vh;
   color: #eee;
   text-align: center;
   padding-top: 40vh;
 
+}
+
+.box {
+  background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%);
+  padding: 30px 30px;
 }
