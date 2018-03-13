@@ -1,6 +1,10 @@
 <h1>Tous les conseillers:</h1>
+<%= link_to "Create an offer", new_offer_path, class: "btn btn-primary" %>
+
+
 <div class="main-container">
-<div class="row">
+
+  <div class="row">
     <% @offers.each do |offer| %>
       <div class="col-xs-12 col-sm-4" id="pic">
         <div class="card">
@@ -11,9 +15,13 @@
               <div class="card-description">
               <h2><%= link_to offer.company_name, offer_path(offer) %></h2>
               <p><%= offer.description %></p>
-                <a class="card-link" href="#" ></a>
-              </div>
-          </div>
+
+              <%= link_to offer_path(offer), method: :delete do %>
+                  <i class="fa fa-trash-alt"></i>
+              <% end %>
+              <%= link_to "edit", edit_offer_path(offer), class: "btn btn-primary" %>
+        </div>
+
       </div>
     <% end %>
   </div>
@@ -29,7 +37,7 @@
          });
        }
   </script>
-  </div>
+</div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <!-- Latest compiled and minified JavaScript -->
