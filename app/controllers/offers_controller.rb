@@ -3,25 +3,31 @@ class OffersController < ApplicationController
 
   def index
     @offers = Offer.all
+    # @offers = policy_scope(@offers)
+
   end
 
   def show
     @offer = Offer.find(params[:id])
+    authorize @offer
   end
 
   def new
     @offer = Offer.new
+    authorize @offer
   end
 
   def create
     @offer = Offer.new(offer_params)
     @offer.user = current_user
+    authorize @offer
     if @offer.save
       redirect_to offer_path(@offer)
     else
       render :new
     end
   end
+
 
 private
 
