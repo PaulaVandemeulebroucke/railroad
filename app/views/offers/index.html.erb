@@ -13,13 +13,12 @@
               <% if policy(offer).edit? %>
                 <%= link_to "edit", edit_offer_path(offer), class: "btn btn-primary card-btn" %>
                 <%= link_to offer_path(offer), method: :delete do %>
-
                   <i class="fa fa-trash-alt"></i>
                 <% end %>
               <% end %>
               <div class="card-description">
               <h2><%= link_to offer.company_name, offer_path(offer) %></h2>
-              <p><%= offer.description %></p>
+              <p><%= offer.description.first(70) %>...</p>
           </div>
         </div>
 
