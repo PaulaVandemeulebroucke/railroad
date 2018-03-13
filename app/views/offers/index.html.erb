@@ -13,7 +13,7 @@
             </div>
               <div class="card-category">Popular</div>
               <div class="card-description">
-              <h2><%= link_to_to offer.company_name, offer_path(offer) %></h2>
+              <h2><%= link_to offer.company_name, offer_path(offer) %></h2>
               <p><%= offer.description %></p>
 
               <%= link_to offer_path(offer), method: :delete do %>
