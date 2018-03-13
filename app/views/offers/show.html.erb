@@ -1,8 +1,40 @@
 
+<div class="product">
+  <div class="pros-header">
+    <h1 class="pros-header-font"> Notre conseiller: <%= @offer.user.first_name %> <%= @offer.user.last_name %></h1>
+    <h2>Entreprise: <strong><%= @offer.user.first_name %></strong></h2>
+  </div>
 
-<h1> Notre conseiller <%= @offer.user.email %> </h1>
-<h2> conseiller</h2>
-<p> conseiller</p>
+  <div class="main-container container">
+    <div class="row">
+      <div class="col-xs-8">
+        <div class= "description-block">
+          <h2> conseiller</h2>
+          <div class="col-lg-4"><p> conseiller</p></div>
+          <div class="col-lg-4"><p> conseiller</p></div>
+          <div class="col-lg-4"><p> conseiller</p></div>
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <div class="booking-block">
+          <h2>Réserver cette offre</h2>
+          <%= simple_form_for [@offer, @booking] do |f| %>
+          <%= f.input :date, start_year: Date.today.year,
+            end_year: Date.today.year + 1, discard_day: true,
+            order: [:day, :month, :year], class: "element-large" %>
+          <%= f.input :description, label: "Commentaires", placeholder: "Décrivez vos besoins en orientation", input_html: { maxlength: 300 } %>
+          <%= f.submit "réserver", class: "btn btn-success element-large" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
 
 
-<a href="#" class="btn-medium">réserver le conseiller</a>
+
+
+
+
+
+
+
+
