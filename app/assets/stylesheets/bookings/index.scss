@@ -1,6 +1,6 @@
 .booking-list {
-  background-color: white;
-  padding: 20px;
+  padding: 20px 20px;
+  list-style-type: none;
 }
 
 .booking-info {
@@ -8,7 +8,17 @@
 }
 
 .booking-element {
-  background-color: rgb(220, 220, 220);
-  box-shadow: 1px 1px 1px 1px rgb(50, 50, 50);
+  background-color: white;
+  box-shadow: 1px 1px 1px 1px rgb(220, 220, 220);
   padding: 10px 30px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.row {
+  display: inline-block;
+  margin: 0px 10px;
+  min-width: 100px;
 }
