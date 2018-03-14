@@ -1,10 +1,8 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:create, :show, :edit, :update, :destroy]
 
   def index
     @bookings = Booking.all
   end
-
   def new
     @booking = Booking.new
   end
@@ -12,6 +10,8 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.offer = Offer.find(params[:offer_id])
+    authorize @booking
+    @booking.user = current_user
     if @booking.save
       redirect_to offer_path(@booking.offer)
     else
@@ -19,22 +19,22 @@ class BookingsController < ApplicationController
     end
   end
 
-  def show
-  end
+  # def show
+  # end
 
-  def edit
-  end
+  # def edit
+  # end
 
-  def update
-    @booking = Booking.new(booking_params)
-    @booking.update
-  end
+  # def update
+  #   @booking = Booking.new(booking_params)
+  #   @booking.update
+  # end
 
-  def destroy
-    @offer = Offer.find(params[:offer_id])
-    @booking.destroy
-    redirect_to offer_path(@offer)
-  end
+  # def destroy
+  #   @offer = Offer.find(params[:offer_id])
+  #   @booking.destroy
+  #   redirect_to offer_path(@offer)
+  # end
 
   private
 
@@ -42,7 +42,5 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:description, :date, :status)
   end
 
-  def set_booking
-    @booking = Booking.find(params[:id])
-  end
+
 end
