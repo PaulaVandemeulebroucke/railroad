@@ -1,5 +1,11 @@
-<h1>my bookings</h1>
-<% @bookings.each do |booking|%>
-<%=booking.date %>
-<%=booking.description %>
-<% end %>
+<h1>Liste des rendez-vous de <%= @offer.company_name %></h1>
+
+<ul>
+  <% @bookings.each do |booking| %>
+    <li><%= booking.date %></li>
+    <li><%= User.find(booking.user_id).last_name %> <%= User.find(booking.user_id).first_name %></li>
+    <li>Tel: <%= User.find(booking.user_id).phone_number %> | Email: <%= User.find(booking.user_id).email %></li>
+    <li>Commentaires: <%= booking.description %></li>
+    <li><%= booking.status.nil? ? "en attente" : "confirmé" %></li>
+  <% end %>
+</ul>
