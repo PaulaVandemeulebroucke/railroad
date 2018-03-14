@@ -12,7 +12,7 @@
   <body>
     <%= render 'shared/flashes' %>
     <%= render 'shared/navbar' %>
-    <div class="wrapper <%= "marged-top" unless params[:action] == "home" %>">
+      <div class="wrapper <%= "marged-top" unless params[:action] == "home" %>">
       <%= yield %>
     </div>
     <%= render 'shared/footer' %>
@@ -20,5 +20,7 @@
 
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
+    <%= javascript_pack_tag "map" %>
   </body>
 </html>
