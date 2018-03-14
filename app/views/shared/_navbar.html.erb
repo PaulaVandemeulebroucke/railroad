@@ -21,9 +21,12 @@
               <% end %>
             </li>
             <li>
-              <%= link_to offer_bookings_path do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "My Offer") %>
+              <% if current_user.offer.present? %>
+                <%= link_to offer_bookings_path(current_user.offer) do %>
+                  <i class="fa fa-user"></i> <%= t(".profile", default: "My Offer") %>
+                <% end %>
               <% end %>
+
             </li>
             <li>
               <%= link_to "#" do %>
