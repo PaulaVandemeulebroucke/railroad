@@ -5,6 +5,7 @@ class BookingsController < ApplicationController
     @bookings = @offer.bookings
   end
 
+
   def new
     @booking = Booking.new
   end
