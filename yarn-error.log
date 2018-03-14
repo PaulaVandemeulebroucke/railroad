@@ -3,7 +3,9 @@ Arguments:
 
 PATH: 
 
+
   /home/ben/.rbenv/versions/2.4.3/lib/ruby/gems/2.4.0/bin:/home/ben/.rbenv/versions/2.4.3/bin:/home/ben/.rbenv/libexec:/home/ben/.rbenv/plugins/ruby-build/bin:./bin:./node_modules/.bin:/home/ben/.rbenv/shims:/home/ben/.rbenv/bin:/home/ben/bin:/home/ben/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
 
 
 Yarn version: 
