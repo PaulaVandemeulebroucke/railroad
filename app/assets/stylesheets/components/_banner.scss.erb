@@ -1,8 +1,9 @@
 .home-banner {
-  background-image: url(<%= asset_path('banner.jpg') %>);
+  background-image: linear-gradient(-225deg, rgba(0,0,0,0.5) 0%, rgba(0,30,0,0.5) 50%), url('https://images.unsplash.com/photo-1506967236291-3d3c4ad88abd?ixlib=rb-0.3.5&s=b1fea69b0b8f05bd104510e32fe666c5&auto=format&fit=crop&w=1498&q=80');
   background-size: cover;
   height: 100vh;
   color: #eee;
+  justify-content: center;
   text-align: center;
   padding-top: 40vh;
 }
@@ -27,16 +28,24 @@
 .card-banner{
   background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= asset_path('card.jpg') %>);
   background-size: cover;
+  height: 120vh;
+  color: #eee;
+  text-align: center;
+  padding-top: 5vh;
+}
+.dashboard-banner{
+  background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= asset_path('dashboard.jpg') %>);
+  background-size: cover;
   height: 100vh;
   color: #eee;
   text-align: center;
   padding-top: 20vh;
 
 }
-
 .box {
   background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%);
-  padding: 30px 50px;
+  padding: 5px 50px;
+  padding-bottom: 10px;
 }
 
 .photo-banner {

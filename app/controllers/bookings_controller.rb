@@ -1,8 +1,11 @@
 class BookingsController < ApplicationController
 
   def index
-    @bookings = Booking.all
+    @offer = Offer.find(params[:offer_id])
+    @bookings = @offer.bookings
   end
+
+
   def new
     @booking = Booking.new
   end

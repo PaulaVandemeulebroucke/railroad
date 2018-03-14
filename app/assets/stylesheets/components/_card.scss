@@ -4,8 +4,12 @@
   background-position: 50% 50% !important;
   color: white;
   position: relative;
-  width: 285px;
+  width: 270px;
   background-size: cover;
+}
+.card:hover {
+  margin-top: -2px;
+  box-shadow: 1px 1px 2px 1px #ccc;
 }
 .card-btn {
   position: absolute;
