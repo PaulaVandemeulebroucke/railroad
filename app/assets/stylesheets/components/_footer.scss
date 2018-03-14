@@ -1,23 +1,23 @@
 
 .footer {
-  background: #665f9a;
+  background: #284e6e;
   display: flex;
   justify-content: space-between;
   height: 40px;
   position: absolute;
   opacity: 0.6;
   padding: 0px 50px;
-  color: #ebd3d4;
+  color: white;
   padding-top: 5px;
   width: 100%;
 }
 .footer-links {
-  color: #ebd3d4;
+  color: white;
   display: flex;
   align-items: right;
 }
 .footer-links a {
-  color: #ebd3d4;
+  color: white;
   opacity: 0.85;
   text-decoration: none;
   font-size: 24px;
@@ -30,12 +30,12 @@
 .footer-contact {
 margin-top: 14px;
 font-size: 12px;
-color: #ebd3d4;
+color: white;
 
 }
 
 .footer-copyright a {
-color: #ebd3d4;
+color: white;
 align-items: right;
 opacity: 1;
 }
