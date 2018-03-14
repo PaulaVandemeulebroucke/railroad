@@ -1,17 +1,18 @@
 .booking-list {
-  padding: 20px 20px;
   list-style-type: none;
 }
 
-.booking-info {
-
+.booking-info p {
+  font-size: 14px;
+  margin: 0px;
+  padding:0px;
 }
 
 .booking-element {
   background-color: white;
   box-shadow: 1px 1px 1px 1px rgb(220, 220, 220);
   padding: 10px 30px;
-  margin: 10px;
+  margin: 5px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -19,6 +20,15 @@
 
 .row {
   display: inline-block;
-  margin: 0px 10px;
-  min-width: 100px;
+  padding: 10px;
+  width: 100px;
+  margin: 0px 20px;
+}
+
+.status-font {
+  font-size: 14px;
+}
+
+.flex-body {
+  flex: 1 0 auto;
 }
