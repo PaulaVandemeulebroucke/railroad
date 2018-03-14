@@ -2,6 +2,7 @@
 import Typed from 'typed.js';
 
 function loadDynamicBannerText() {
+
  if (document.querySelector("#banner-typed-text")) {
    new Typed('#banner-typed-text', {
      strings: ["CHOOSE YOUR FUTUR", "<strong>GET A COACH</strong>"],
@@ -9,6 +10,7 @@ function loadDynamicBannerText() {
      loop: true
    });
  }
+
 }
 
 export { loadDynamicBannerText };

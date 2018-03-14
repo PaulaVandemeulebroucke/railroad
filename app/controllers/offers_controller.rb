@@ -4,7 +4,15 @@ class OffersController < ApplicationController
   def index
     @offers = Offer.all
     # @offers = policy_scope(@offers)
+    @offers = Offer.where.not(latitude: nil, longitude: nil)
 
+    @markers = @offers.map do |offer|
+      {
+        lat: offer.latitude,
+        lng: offer.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }
+    end
   end
 
   def show
