@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
     @offer = Offer.find(params[:offer_id])
     @bookings = @offer.bookings
   end
+
   def new
     @booking = Booking.new
   end
