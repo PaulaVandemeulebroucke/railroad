@@ -1,0 +1,17 @@
+<div class= dashboard-banner>
+  <h1>my bookings</h1>
+<div class="container ">
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+          <div class="box">
+          <h1 class="white-bold-title">A remplir:</h1>
+          <% @bookings.each do |booking|%>
+            <%=booking.date %>
+            <%=booking.description %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
