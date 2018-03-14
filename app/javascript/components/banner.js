@@ -2,11 +2,13 @@
 import Typed from 'typed.js';
 
 function loadDynamicBannerText() {
-  new Typed('#banner-typed-text', {
-    strings: ["CHOOSE YOUR FUTUR", "<strong>GET A COACH</strong>"],
-    typeSpeed: 50,
-    loop: true
-  });
+  if (document.querySelector("#banner-typed-text")) {
+    new Typed('#banner-typed-text', {
+      strings: ["CHOOSE YOUR FUTUR", "<strong>GET A COACH</strong>"],
+      typeSpeed: 50,
+      loop: true
+    });
+  }
 }
 
 export { loadDynamicBannerText };

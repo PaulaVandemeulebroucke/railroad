@@ -8,3 +8,5 @@ loadDynamicBannerText();
 // bindSweetAlertButtonDemo();
 // import '../components/select2';
 
+import { autocomplete } from '../components/autocomplete';
+autocomplete();
