@@ -13,15 +13,16 @@
           <% end %>
           <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= url %>')">
               <% if policy(offer).edit? %>
-                <%= link_to "edit", edit_offer_path(offer), class: "btn btn-primary card-btn" %>
+                <%= link_to "edit", edit_offer_path(offer), class: "btn btn-primary card-btn first-layer" %>
                 <%= link_to offer_path(offer), method: :delete do %>
-                  <i class="fa fa-trash-alt"></i>
+                  <i class="fa fa-trash-alt first-layer"></i>
                 <% end %>
               <% end %>
               <div class="card-description">
-              <h2><%= link_to offer.company_name, offer_path(offer) %></h2>
+              <h2><%= offer.company_name %></h2>
               <p><%= offer.description.first(70) %>...</p>
             </div>
+            <%= link_to "", offer_path(offer), class: "card-link"%>
           </div>
         <% end %>
       </div>
