@@ -5,6 +5,13 @@ class BookingsController < ApplicationController
     @bookings = @offer.bookings
   end
 
+  def accept_booking
+    @booking.status == "accepted"
+  end
+
+  def deny_booking
+    @booking.status == "denied"
+  end
 
   def new
     @booking = Booking.new

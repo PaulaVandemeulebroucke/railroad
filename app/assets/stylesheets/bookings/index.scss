@@ -1,5 +1,6 @@
 .booking-list {
   list-style-type: none;
+  margin-bottom: 5px;
 }
 
 .booking-info p {
@@ -11,8 +12,8 @@
 .booking-element {
   background-color: white;
   box-shadow: 1px 1px 1px 1px rgb(220, 220, 220);
-  padding: 10px 30px;
-  margin: 5px;
+  padding: 5px 30px;
+  margin: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -24,10 +25,30 @@
   }
 }
 
+.date-font {
+  font-size: 16px;
+}
+
 .status-font {
   font-size: 14px;
 }
 
 .flex-body {
   flex: 1 0 auto;
+}
+
+.content-bloc {
+  background-color: white;
+}
+
+.row-btn {
+  position: relative;
+  padding: 10px;
+  margin: 20px;
+}
+
+.return-btn-position {
+  position: absolute;
+  right: 5px;
+  bottom: 15px;
 }
