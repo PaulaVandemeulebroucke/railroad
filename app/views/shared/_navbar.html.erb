@@ -21,6 +21,7 @@
               <% end %>
             </li>
             <li>
+
               <% if current_user.offer.present? %>
                 <%= link_to offer_bookings_path(current_user.offer) do %>
                   <i class="fa fa-user"></i> <%= t(".profile", default: "My Offer") %>
@@ -29,6 +30,7 @@
 
             </li>
             <li>
+
               <%= link_to "#" do %>
                 <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
               <% end %>
