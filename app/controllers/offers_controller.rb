@@ -2,16 +2,32 @@ class OffersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @offers = Offer.all
-    # @offers = policy_scope(@offers)
-    @offers = Offer.where.not(latitude: nil, longitude: nil)
+    if params[:query].present?
+      sql_query = " \
+        offers.company_name ILIKE :query \
+        OR offers.description ILIKE :query \
+        OR offers.address ILIKE :query \
+      "
+      @offers = Offer.where(sql_query, query: "%#{params[:query]}%")
+      @offers = @offers.where.not(latitude: nil, longitude: nil)
 
-    @markers = @offers.map do |offer|
-      {
-        lat: offer.latitude,
-        lng: offer.longitude#,
-        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
-      }
+      @markers = @offers.map do |offer|
+        {
+          lat: offer.latitude,
+          lng: offer.longitude#,
+          # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+        }
+      end
+    else
+      @offers = Offer.all
+      @offers = Offer.where.not(latitude: nil, longitude: nil)
+
+      @markers = @offers.map do |offer|
+        {
+          lat: offer.latitude,
+          lng: offer.longitude#,
+        }
+      end
     end
   end
 
