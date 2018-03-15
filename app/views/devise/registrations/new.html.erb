@@ -3,13 +3,36 @@
      <div class="row">
        <div class="col-sm-6 col-sm-offset-3">
         <div class="box">
-            <h2>Sign up !</h2>
+            <h2 id="sign-up-or-in">Sign up !</h2>
             <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
               <%= f.error_notification %>
               <div class="form-inputs">
-                <%= f.input :email, required: true, autofocus: true %>
-                <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-                <%= f.input :password_confirmation, required: true %>
+                <div class="row-form">
+                  <div class="form-input-name">
+                    <%= f.input :first_name, :label => "Prénom", required: true, autofocus: true, placeholder: "Gaston" %>
+                  </div>
+                  <div class="form-input-name">
+                    <%= f.input :last_name, :label => "Nom",  required: true, autofocus: true, placeholder: "Lagaffe"  %>
+                  </div>
+                </div>
+                <div class="row-form">
+                  <div class="form-input-tel-and-mail">
+                    <%= f.input :phone_number, :label => "Téléphone",  required: true, autofocus: true, placeholder: "Allez, balance ton 07, mec !" %>
+                  </div>
+                </div>
+                <div class="row-form">
+                  <div class="form-input-tel-and-mail">
+                    <%= f.input :email, :label => "Mail",  required: true, autofocus: true, placeholder: "a-la-traine@lewagon.com" %>
+                  </div>
+                </div>
+                <div class="row-form">
+                  <div class="form-input-name">
+                    <%= f.input :password, :label => "Mot de passe",  required: true, hint: ("#{@minimum_password_length} lettres au minimum" if @minimum_password_length) %>
+                  </div>
+                  <div class="form-input-name">
+                    <%= f.input :password_confirmation, :label => "Confirmation",  required: true, :placeholder => "Mot de passe" %>
+                  </div>
+                </div>
               </div>
               <div class="form-actions">
                 <%= f.button :submit, "Sign up", class: "btn btn-success btn-lg" %>
