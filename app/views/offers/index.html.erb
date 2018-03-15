@@ -1,43 +1,44 @@
-<h1>Tous les conseillers:</h1>
 
+<div class="wrapper">
 
-<div class="container main-container">
-  <%= form_tag offers_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Trouver un conseiller"
-    %>
-    <% end %>
-  <div class="row">
-    <div class="col-xs-6 col-sm-8">
-      <div class="cards-container">
-        <% @offers.each do |offer| %>
-          <% if offer.photo.file.nil? %>
-            <% url =  "https://images.unsplash.com/photo-1506967236291-3d3c4ad88abd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8966dd3034be8631151ec07601acfa02&auto=format&fit=crop&w=2849&q=80"%>
-          <% else %>
-            <% url =  cl_image_path offer.photo, height: 300, width: 400, crop: :fill%>
-          <% end %>
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= url %>')">
-              <% if policy(offer).edit? %>
-                <%= link_to "edit", edit_offer_path(offer), class: "btn btn-primary card-btn first-layer" %>
-                <%= link_to offer_path(offer), method: :delete do %>
-                  <i class="fa fa-trash-alt first-layer"></i>
+  <div class="container main-container">
+    <h1>Nos conseillers:</h1>
+    <%= form_tag offers_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "tappez ici votre recherche"
+      %>
+      <% end %>
+    <div class="row">
+      <div class="col-xs-6 col-sm-8">
+        <div class="cards-container">
+          <% @offers.each do |offer| %>
+            <% if offer.photo.file.nil? %>
+              <% url =  "https://images.unsplash.com/photo-1506967236291-3d3c4ad88abd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8966dd3034be8631151ec07601acfa02&auto=format&fit=crop&w=2849&q=80"%>
+            <% else %>
+              <% url =  cl_image_path offer.photo, height: 300, width: 400, crop: :fill%>
+            <% end %>
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= url %>')">
+                <% if policy(offer).edit? %>
+                  <%= link_to "edit", edit_offer_path(offer), class: "btn btn-primary card-btn first-layer" %>
+                  <%= link_to offer_path(offer), method: :delete do %>
+                    <i class="fa fa-trash-alt first-layer"></i>
+                  <% end %>
                 <% end %>
-              <% end %>
-              <div class="card-description">
-              <h2><%= offer.company_name %></h2>
-              <p><%= offer.description.first(70) %>...</p>
+                <div class="card-description">
+                <h2><%= offer.company_name %></h2>
+                <p><%= offer.description.first(70) %>...</p>
+              </div>
+              <%= link_to "", offer_path(offer), class: "card-link"%>
             </div>
-            <%= link_to "", offer_path(offer), class: "card-link"%>
-          </div>
-        <% end %>
-      </div>
+          <% end %>
+        </div>
 
-    </div>
-    <div class="col-xs-6 col-sm-4 padding-left-0">
-      <div id="map" data-markers="<%= @markers.to_json %>"></div>
+      </div>
+      <div class="col-xs-6 col-sm-4 padding-left-0">
+        <div id="map" data-markers="<%= @markers.to_json %>"></div>
+      </div>
     </div>
   </div>
 </div>
-
