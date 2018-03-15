@@ -20,6 +20,39 @@
     color: #d53533;
   }
 }
+.rdv {
+  background-color: white;
+  width: calc(100vw - 60px);
+  color: #333333;
+  font-weight: 25px;
+  border-color: #333333;
+  position: relative;
+  margin-top: 160px;
+  padding-top: 0;
+  padding-bottom: 5px;
+  .date {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: 25px;
+    font-weight: lighter;
+  }
+  .name a {
+    color: #333333 !important;
+    font-weight: 25px;
+    font-size: 30px;
+  }
+  .svg-inline--fa {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    color: #333333 !important;
+  }
+  .desc {
+    font-size: 16px;
+    color: rgb(160, 160, 160);
+  }
+}
 .card:hover {
   margin-top: -2px;
   box-shadow: 1px 1px 2px 1px #ccc;
@@ -66,7 +99,7 @@
   font-weight: lighter !important;
   font-size: 30px !important;
   position: absolute;
-  margin-top: 330px;
+  margin-top: 380px;
 }
 .card-btn {
   position: absolute;
