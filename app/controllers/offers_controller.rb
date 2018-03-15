@@ -9,25 +9,10 @@ class OffersController < ApplicationController
         OR offers.address ILIKE :query \
       "
       @offers = Offer.where(sql_query, query: "%#{params[:query]}%")
-      @offers = @offers.where.not(latitude: nil, longitude: nil)
-
-      @markers = @offers.map do |offer|
-        {
-          lat: offer.latitude,
-          lng: offer.longitude#,
-          # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
-        }
-      end
+      clean_map
     else
       @offers = Offer.all
-      @offers = Offer.where.not(latitude: nil, longitude: nil)
-
-      @markers = @offers.map do |offer|
-        {
-          lat: offer.latitude,
-          lng: offer.longitude#,
-        }
-      end
+      clean_map
     end
   end
 
@@ -76,5 +61,16 @@ private
 
   def offer_params
     params.require(:offer).permit(:company_name, :address, :description, :price, :photo)
+  end
+
+  def clean_map
+    @offers = @offers.where.not(latitude: nil, longitude: nil)
+
+    @markers = @offers.map do |offer|
+      {
+        lat: offer.latitude,
+        lng: offer.longitude#,
+      }
+    end
   end
 end
