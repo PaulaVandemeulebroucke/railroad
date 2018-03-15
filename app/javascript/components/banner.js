@@ -5,7 +5,7 @@ function loadDynamicBannerText() {
 
  if (document.querySelector("#banner-typed-text")) {
    new Typed('#banner-typed-text', {
-     strings: ["CHOOSE YOUR FUTUR", "<strong>GET A COACH</strong>"],
+     strings: ["TROUVE TA VOIE", "<strong>avec nous si possible...</strong>"],
      typeSpeed: 50,
      loop: true
    });

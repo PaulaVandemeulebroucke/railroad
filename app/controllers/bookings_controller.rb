@@ -5,6 +5,21 @@ class BookingsController < ApplicationController
     @bookings = @offer.bookings
   end
 
+  def accept
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @booking.status = "accepted"
+    @booking.save
+    redirect_to offer_bookings_path(@booking.offer_id)
+  end
+
+  def deny
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @booking.status = "denied"
+    @booking.destroy
+    redirect_to offer_bookings_path(@booking.offer_id)
+  end
 
   def new
     @booking = Booking.new
@@ -33,11 +48,12 @@ class BookingsController < ApplicationController
   #   @booking.update
   # end
 
-  # def destroy
-  #   @offer = Offer.find(params[:offer_id])
-  #   @booking.destroy
-  #   redirect_to offer_path(@offer)
-  # end
+  def destroy
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @booking.destroy
+    redirect_to dashboard_path
+  end
 
   private
 

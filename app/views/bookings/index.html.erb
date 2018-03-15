@@ -15,26 +15,59 @@
 </div>
 
 <div class="container">
-  <div>
-  <%= link_to "retour", offer_path(@offer) %>
-</div>
-  <ul class="booking-list">
-    <% @bookings.each do |booking| %>
-      <div class="booking-element">
-        <div class= "row">
-          <li><strong><%= booking.date %></strong></li>
-        </div>
-        <div class="row flex-body">
-          <div class="booking-info">
-            <li><strong><%= User.find(booking.user_id).last_name %> <%= User.find(booking.user_id).first_name %></strong></li>
-            <li><p><strong>Tel: </strong><%= User.find(booking.user_id).phone_number %><strong> | Email: </strong><%= User.find(booking.user_id).email %></p></li>
-            <li><p><strong>Commentaires: </strong><%= booking.description %></p></li>
+  <div class="content-bloc">
+    <ul class="booking-list">
+      <% @bookings.each do |booking| %>
+        <div class="booking-element">
+          <div class= "row date-font">
+            <li><strong><%= booking.date %></strong></li>
+          </div>
+          <div class="row flex-body">
+            <div class="booking-info">
+              <li><strong><%= User.find(booking.user_id).last_name %> <%= User.find(booking.user_id).first_name %></strong></li>
+              <li><p><strong>Tel: </strong><%= User.find(booking.user_id).phone_number %><strong> | Email: </strong><%= User.find(booking.user_id).email %></p></li>
+              <li><p><strong>Commentaires: </strong><%= booking.description %></p></li>
+            </div>
+          </div>
+          <div class="row status-font" id="status">
+            <li><strong><em><%= booking.status == "<pend></pend>ing" ? "en attente" : "confirmé" %></em></strong></li>
+          </div>
+          <div class="row action-rdv">
+            <% if booking.status == "<pend></pend>ing" %>
+              <div class="row-status">
+                <li>
+                  <%= link_to accept_path(booking) do %>
+                    <i class="fa fa-check-square"></i>
+                  <% end %>
+                </li>
+              </div>
+              <div class="row-status">
+                <li><p>  |  </p></li>
+              </div>
+              <div class="row-status">
+                <li>
+                  <%= link_to deny_path(booking) do %>
+                    <i class="fa fa-trash-alt"></i>
+                  <% end %>
+                </li>
+              </div>
+              <% else %>
+              <div class="row-status">
+                <li>
+                  <%= link_to deny_path(booking) do %>
+                    <i class="fa fa-trash-alt"></i>
+                  <% end %>
+                </li>
+              </div>
+            <% end %>
           </div>
         </div>
-        <div class="row status-font">
-          <li><strong><em><%= booking.status.nil? ? "en attente" : "confirmé" %></em></strong></li>
-        </div>
+      <% end %>
+    </ul>
+    <div class="row-btn">
+      <div class="return-btn-position">
+        <%= link_to "retour", offer_path(@offer), class: "btn btn-primary" %>
       </div>
-    <% end %>
-  </ul>
+    </div>
+  </div>
 </div>

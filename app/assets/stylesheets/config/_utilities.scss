@@ -1,3 +1,11 @@
+$navbar-height: 70px;
+$footer-height: 40px;
+
+
 .marged-top {
-  margin-top:  70px;
+  margin-top:  $navbar-height;
+}
+
+.min-height-100vh{
+  min-height: calc( 100vh - #{$navbar-height} - #{$footer-height} );
 }
