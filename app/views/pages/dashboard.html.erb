@@ -25,7 +25,7 @@
       <div class="rdv">
             <h2 class="date"><%= booking.date %>
             <h2 class="name"><%= link_to booking.offer.company_name, offer_path(booking.offer) %></h2>
-            <p class="desc"><%= booking.offer.description.first(70) %>...</p>
+            <em><p class="desc"><%= booking.offer.description.first(70) %>...</p></em>
             <%= link_to offer_booking_path(booking.offer, booking), method: :delete do %>
               <i class="fa fa-trash-alt"></i>
             <% end %>
@@ -35,4 +35,5 @@
     </div>
   </div>
 </div>
+<%= link_to 'Retour aux offres', offers_path, :class => "btn btn-primary bouton" %>
 

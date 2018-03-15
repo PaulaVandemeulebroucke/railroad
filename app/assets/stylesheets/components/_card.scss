@@ -44,9 +44,10 @@
   }
   .svg-inline--fa {
     position: absolute;
-    top: 20px;
+    top: 30px;
     right: 10px;
-    color: #333333 !important;
+    color: rgb(160, 160, 160) !important;
+    font-size: 20px;
   }
   .desc {
     font-size: 16px;
@@ -57,6 +58,11 @@
   margin-top: -2px;
   box-shadow: 1px 1px 2px 1px #ccc;
   text-decoration: none;
+}
+.bouton {
+  margin-left: 645px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .wishlist {
   width: 270px;
