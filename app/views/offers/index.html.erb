@@ -23,6 +23,19 @@
               <p><%= offer.description.first(70) %>...</p>
             </div>
             <%= link_to "", offer_path(offer), class: "card-link"%>
+
+
+            <% if offer.get_likes.where(voter_id: current_user).count == 0 %>
+              <%= link_to like_path(offer), method: :patch, class: "card-like-link" do%>
+                <i class="far fa-heart"></i>
+              <% end %>
+            <% else %>
+              <%= link_to dislike_path(offer), method: :patch, class: "card-like-link" do %>
+                <i class="fas fa-heart"></i>
+              <% end %>
+            <% end %>
+
+
           </div>
         <% end %>
       </div>

@@ -29,6 +29,10 @@ class OfferPolicy < ApplicationPolicy
     return true
   end
 
+  def dislike?
+    return true
+  end
+
   private
 
   def is_user_the_creator?

@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   resources :offers do
     resources :bookings, only: [:index, :create, :show]
   end
-  patch "offers/:id/like", to: "offers#like"
+  patch "offers/:id/like", to: "offers#like", as: :like
+  patch "offers/:id/dislike", to: "offers#dislike", as: :dislike
 end
