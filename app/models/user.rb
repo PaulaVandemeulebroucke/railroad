@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_one :offer, dependent: :destroy
   has_many :bookings, dependent: :destroy
+  acts_as_voter
 end

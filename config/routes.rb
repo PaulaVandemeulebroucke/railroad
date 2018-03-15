@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :offers do
     resources :bookings, only: [:index, :create, :show]
   end
+  patch "offers/:id/like", to: "offers#like"
 end

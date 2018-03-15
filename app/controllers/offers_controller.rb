@@ -56,6 +56,13 @@ class OffersController < ApplicationController
     redirect_to offers_path
   end
 
+  def like
+    @offer = Offer.find(params[:id])
+    authorize @offer
+    @offer.liked_by current_user
+    redirect_to offers_path
+  end
+
 private
 
   def offer_params

@@ -25,6 +25,10 @@ class OfferPolicy < ApplicationPolicy
     is_user_the_creator?
   end
 
+  def like?
+    return true
+  end
+
   private
 
   def is_user_the_creator?
