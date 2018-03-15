@@ -13,8 +13,9 @@
 }
 #map {
   flex: 0 0 450px;
-  height: 100vh;
+  height: calc(100vh - #{$navbar-height});
   position: sticky !important;
+  top: 40px;
   margin-left: 10px;
 }
 .card {

@@ -13,28 +13,27 @@
       </div>
     </div>
   </div>
-
-  <div class="main-container container">
-    <div class="row">
-      <div class="col-xs-8">
-        <div class= "description-block">
-          <h2>Notre offre</h2>
-          <p><%= @offer.description %></p>
-        </div>
-      </div>
-
-      <div class="col-xs-4">
-        <div class="booking-block">
-          <h2>Réserver cette offre</h2>
-          <%= simple_form_for [@offer, @booking] do |f| %>
-          <%= f.input :date,  enableTime: true, dateformat: "Y-m-d H:i",required: false, as: :string, input_html: {class: " form-control datepicker "} %>
-          <%= f.input :description, label: "Commentaires", placeholder: "Décrivez vos besoins en orientation", input_html: { maxlength: 300 } %>
-          <%= f.submit "réserver", class: "btn btn-success element-large" %>
-          <% end %>
-        </div>
+</div>
+<div class="main-container container">
+  <div class="row">
+    <div class="col-xs-8">
+      <div class= "description-block">
+        <h2>Notre offre</h2>
+        <p><%= @offer.description %></p>
       </div>
     </div>
 
-
+    <div class="col-xs-4">
+      <div class="booking-block">
+        <h2>Réserver cette offre</h2>
+        <%= simple_form_for [@offer, @booking] do |f| %>
+        <%= f.input :date,  enableTime: true, dateformat: "Y-m-d H:i",required: false, as: :string, input_html: {class: " form-control datepicker "} %>
+        <%= f.input :description, label: "Commentaires", placeholder: "Décrivez vos besoins en orientation", input_html: { maxlength: 300 } %>
+        <%= f.submit "réserver", class: "btn btn-success element-large" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
 
