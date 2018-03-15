@@ -2,6 +2,11 @@
   width: 100%;
 }
 
+.block-container {
+position: sticky;
+top: 60px;
+}
+
 .booking-block {
 display:flex;
 width: 100%;
