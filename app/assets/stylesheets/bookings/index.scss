@@ -12,7 +12,10 @@
 .booking-element {
   background-color: white;
   box-shadow: 1px 1px 1px 1px rgb(220, 220, 220);
-  padding: 5px 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 30px;
+  padding-right: 5px;
   margin: 10px;
   display: flex;
   align-items: center;
@@ -21,7 +24,7 @@
     display: inline-block;
     padding: 10px;
     width: 100px;
-    margin: 0px 20px;
+    margin: 0px 10px;
   }
 }
 
@@ -49,6 +52,33 @@
 
 .return-btn-position {
   position: absolute;
-  right: 5px;
-  bottom: 15px;
+  right: 40px;
+  bottom: 10px;
+}
+
+.action-rdv {
+  width: 80px !important;
+  margin-right: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+    .row-status {
+    display: inline-block;
+  }
+}
+
+.action-rdv .fa-check-square {
+  width: 16px;
+  color: #006c00;
+}
+
+.action-rdv .fa-trash-alt {
+  width: 16px;
+  color: #c22f2f;
+}
+
+.action-rdv p {
+  font-size: 24px;
+  margin: 0px;
+  padding: 0px;
 }

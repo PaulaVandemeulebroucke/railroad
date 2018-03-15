@@ -5,12 +5,20 @@ class BookingsController < ApplicationController
     @bookings = @offer.bookings
   end
 
-  def accept_booking
-    @booking.status == "accepted"
+  def accept
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @booking.status = "accepted"
+    @booking.save
+    redirect_to offer_bookings_path(@booking.offer_id)
   end
 
-  def deny_booking
-    @booking.status == "denied"
+  def deny
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @booking.status = "denied"
+    @booking.destroy
+    redirect_to offer_bookings_path(@booking.offer_id)
   end
 
   def new
