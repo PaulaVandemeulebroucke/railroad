@@ -11,10 +11,10 @@
             <% url =  cl_image_path booking.offer.photo, height: 300, width: 400, crop: :fill%>
           <% end %>
           <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= url %>')">
-                <%#= link_to "edit", edit_offer_path(offer), class: "btn btn-primary card-btn" %>
-                <%#= link_to offer_path(offer), method: :delete do %>
-                  <!-- <i class="fa fa-trash-alt"></i> -->
-                <%# end %>
+                <%#= link_to "edit", edit_offer_path(booking), class: "btn btn-primary card-btn" %>
+                <%= link_to offer_booking_path(booking.offer, booking), method: :delete do %>
+                  <i class="fa fa-trash-alt"></i>
+                <% end %>
               <div class="card-description">
                   <%=booking.date %>
               <h2><%= link_to booking.offer.company_name, offer_path(booking.offer) %></h2>
