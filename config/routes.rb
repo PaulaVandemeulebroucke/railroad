@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resources :users
   get "dashboard", to: "pages#dashboard"
   resources :offers do
-    resources :bookings, only: [:index, :create, :show]
+    resources :bookings, only: [:index, :create, :show, :destroy]
   end
 end

@@ -33,11 +33,12 @@ class BookingsController < ApplicationController
   #   @booking.update
   # end
 
-  # def destroy
-  #   @offer = Offer.find(params[:offer_id])
-  #   @booking.destroy
-  #   redirect_to offer_path(@offer)
-  # end
+  def destroy
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @booking.destroy
+    redirect_to dashboard_path
+  end
 
   private
 
