@@ -2,11 +2,14 @@ class BookingsController < ApplicationController
 
   def index
     @offer = Offer.find(params[:offer_id])
+    authorize @offer, :destroy?
     @bookings = @offer.bookings
   end
 
   def accept
     @booking = Booking.find(params[:id])
+    @booking.user = current_user #for sen an email
+
     authorize @booking
     @booking.status = "accepted"
     @booking.save
@@ -16,7 +19,6 @@ class BookingsController < ApplicationController
   def deny
     @booking = Booking.find(params[:id])
     authorize @booking
-    @booking.status = "denied"
     @booking.destroy
     redirect_to offer_bookings_path(@booking.offer_id)
   end
