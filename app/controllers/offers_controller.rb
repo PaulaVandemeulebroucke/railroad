@@ -70,10 +70,6 @@ class OffersController < ApplicationController
     redirect_to offers_path
   end
 
-  def wishlist
-    @offers = current_user.likes.map { |like| Offer.find(like.votable_id) }
-  end
-
 private
 
   def offer_params

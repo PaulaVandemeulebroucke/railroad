@@ -1,8 +1,26 @@
 
 <div class="container main-container">
   <div class= dashboard-banner>
-  <div class="row">
-    <div class="col-xs-6 col-sm-8">
+  <div class="">
+      <h1 class="h1Wishlist">Ma Wishlist:</h1>
+        <% if @offers.empty? %>
+          <p>Vous n'avez liké aucune offre pour le moment...</p>
+        <% else %>
+          <% @offers.each do |offer| %>
+            <div class="col-xs-12 col-sm-3">
+              <ul><div class="wishlist card">
+                <li class="title"><%=offer.company_name %></li>
+                <li class="subtitle"><%=offer.address %></li>
+                <li class="subtitle"><%=offer.price %> €</li>
+                <li><%= link_to 'Revoir cette offre', offer_path(offer), :class => "btn btn-success" %></li>
+                <i class="fas fa-heart"></i>
+              </div></ul>
+            </div>
+          <% end %>
+        <% end %>
+
+      <h1 class="h1RDV">Mes rendez-vous:</h1>
+    <div class="col-xs-12 col-sm-6">
       <div class="cards-container">
         <% @bookings.each do |booking| %>
           <% if booking.offer.photo.file.nil? %>

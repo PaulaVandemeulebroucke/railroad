@@ -33,6 +33,10 @@ class OfferPolicy < ApplicationPolicy
     return true
   end
 
+   def wishlist
+    return true
+   end
+
   private
 
   def is_user_the_creator?

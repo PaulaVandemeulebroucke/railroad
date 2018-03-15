@@ -6,4 +6,8 @@ class User < ApplicationRecord
   has_one :offer, dependent: :destroy
   has_many :bookings, dependent: :destroy
   acts_as_voter
+
+  def likes
+    self.votes.up.for_type(Offer)
+  end
 end
