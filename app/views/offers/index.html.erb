@@ -1,15 +1,28 @@
 
 <div class="wrapper">
+  <div class="product">
+    <div class="pros-header">
+      <% url1 =  "https://unsplash.com/photos/nJdwUHmaY8A "%>
+      <div class="photo-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= url1 %>')">
 
-  <div class="container main-container">
-    <h1>Nos conseillers:</h1>
-    <%= form_tag offers_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "tappez ici votre recherche"
-      %>
-      <% end %>
+        <div class="photo-banner-content">
+          <div class="container main-container">
+            <h1>Nos conseillers:</h1>
+            <%= form_tag offers_path, method: :get do %>
+              <%= text_field_tag :query,
+                params[:query],
+                class: "form-control",
+                placeholder: "tappez ici votre recherche"
+              %>
+              <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
     <div class="row">
       <div class="col-xs-6 col-sm-8">
         <div class="cards-container">
@@ -36,9 +49,9 @@
         </div>
 
       </div>
-      <div class="col-xs-6 col-sm-4 padding-left-0">
+      <div class="map-container col-xs-6 col-sm-4 padding-left-0">
         <div id="map" data-markers="<%= @markers.to_json %>"></div>
       </div>
     </div>
-  </div>
+
 </div>
