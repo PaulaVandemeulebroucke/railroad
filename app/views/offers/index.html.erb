@@ -3,41 +3,22 @@
   <div class="product">
     <div class="pros-header">
       <% url1 =  "https://unsplash.com/photos/nJdwUHmaY8A "%>
-      <div class="photo-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= url1 %>')">
-
-        <div class="photo-banner-content">
-          <div class="container main-container">
-            <h1>Nos conseillers:</h1>
-            <%= form_tag offers_path, method: :get do %>
-              <%= text_field_tag :query,
-                params[:query],
-                class: "form-control",
-                placeholder: "tappez ici votre recherche"
-              %>
+      <div class="photo-banner" style="background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.3)), url(<%= asset_path('Unsp.jpg') %>">
+        <div class="col-sm-6 col-sm-offset-3 col-margin">
+          <h2 id="white"><strong>RAILROAD</strong></h2>
+          <h5 id="white" style="padding-top: 20px">Construisons ensemble votre projet d'avenir </h5>
+                <%= form_tag  offers_path, method: :get do %>
+                  <%= text_field_tag :query,
+                    params[:query],
+                    class: "form-control",
+                    placeholder: "cherchez ici un conseiller, une entreprise..."
+                  %>
               <% end %>
-              <div class="card-description">
-              <h2><%= offer.company_name %></h2>
-              <p><%= offer.description.first(70) %>...</p>
-            </div>
-            <%= link_to "", offer_path(offer), class: "card-link"%>
-
-
-            <% if offer.get_likes.where(voter_id: current_user).count == 0 %>
-              <%= link_to like_path(offer), method: :patch, class: "card-like-link" do%>
-                <i class="far fa-heart"></i>
-              <% end %>
-            <% else %>
-              <%= link_to dislike_path(offer), method: :patch, class: "card-like-link" do %>
-                <i class="fas fa-heart"></i>
-              <% end %>
-            <% end %>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-
 
     <div class="row">
       <div class="col-xs-6 col-sm-8">
