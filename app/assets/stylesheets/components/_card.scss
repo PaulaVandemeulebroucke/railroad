@@ -4,7 +4,13 @@
   background-position: 50% 50% !important;
   color: white;
   position: relative;
-  width: 270px;
+  width: calc(33% - 20px);
+  @media(max-width: 992px) {
+    width: calc(50% - 20px);
+  }
+  @media(max-width: 768px) {
+    width: calc(100% - 20px);
+  }
   background-size: cover;
   .card-like-link {
     z-index: 3;
