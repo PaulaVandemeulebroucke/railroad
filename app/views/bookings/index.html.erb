@@ -36,17 +36,17 @@
             <% if booking.status == "<pend></pend>ing" %>
               <div class="row-status">
                 <li>
-                  <%= link_to accept_path(booking) do %>
-                    <i class="fa fa-check-square"></i>
+                  <%= link_to(accept_path(booking), { method: :get, data: { confirm: "Confirmer le rendez-vous ?" } }) do %>
+                    <i class="fa fa-check-sπquare"></i>
                   <% end %>
                 </li>
               </div>
               <div class="row-status">
-                <li><p>  |  </p></li>
+                <li><p> | </p></li>
               </div>
               <div class="row-status">
                 <li>
-                  <%= link_to deny_path(booking) do %>
+                  <%= link_to(deny_path(booking), { method: :delete, data: { confirm: "Êtes-vous sûr ?" } }) do %>
                     <i class="fa fa-trash-alt"></i>
                   <% end %>
                 </li>
@@ -54,8 +54,18 @@
               <% else %>
               <div class="row-status">
                 <li>
-                  <%= link_to deny_path(booking) do %>
+                  <%= link_to(deny_path(booking), { method: :delete, data: { confirm: "Êtes-vous sûr ?" } }) do %>
                     <i class="fa fa-trash-alt"></i>
+                  <% end %>
+                </li>
+              </div>
+              <div class="row-status">
+                <li><p> | </p></li>
+              </div>
+              <div class="row-status">
+                <li>
+                  <%= mail_to booking.user.email, cc: @offer.user.email, subject: "[RailRoad] Confirmation de rendez-vous", body: "Votre rendez-vous du #{booking.date} avec #{@offer.company_name} est confirmé ! Merci d'avoir choisi RAIL ROAD :-)" do %>
+                    <i class="fa fa-envelope""></i>
                   <% end %>
                 </li>
               </div>
