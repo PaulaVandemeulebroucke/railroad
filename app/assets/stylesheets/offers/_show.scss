@@ -8,12 +8,12 @@ top: 60px;
 }
 
 .booking-block {
-display:flex;
 width: 100%;
 background: white;
 padding: 50px 20px;
 position: sticky !important;
 margin: 0px 20px;
+box-shadow: 0 1px 2px rgba(100,100,100,0.3);
 }
 
 .element-large {

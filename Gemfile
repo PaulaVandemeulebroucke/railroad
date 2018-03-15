@@ -13,6 +13,7 @@ gem 'pundit'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 
+
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
 gem 'font-awesome-sass', '~> 4.7'
