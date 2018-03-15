@@ -10,5 +10,7 @@ class Offer < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
+
+  acts_as_votable
 end
 

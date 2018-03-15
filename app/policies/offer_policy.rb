@@ -25,6 +25,18 @@ class OfferPolicy < ApplicationPolicy
     is_user_the_creator?
   end
 
+  def like?
+    return true
+  end
+
+  def dislike?
+    return true
+  end
+
+   def wishlist
+    return true
+   end
+
   private
 
   def is_user_the_creator?
