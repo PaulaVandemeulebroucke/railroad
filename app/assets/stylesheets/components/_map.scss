@@ -10,6 +10,9 @@
   // padding: 10px;
   .card {
     flex: 0 0 auto;
+    margin: 10px;
+    font-size: 20px;
+    box-shadow: 1px 1px 1px 1px rgba(200, 200, 200, .8)
   }
 }
 #map {
@@ -23,11 +26,6 @@ position: sticky;
 top: 70px;
 }
 
-.card {
-  margin: 10px;
-  font-size: 20px;
-  box-shadow: 1px 1px 1px 1px rgba(200, 200, 200, .8)
-}
 .padding-left-0 {
   padding-left: 0 !important;
 }

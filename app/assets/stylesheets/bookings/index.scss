@@ -1,6 +1,6 @@
 .booking-list {
   list-style-type: none;
-  margin-bottom: 5px;
+  margin-bottom: 0px;
 }
 
 .booking-info p {
@@ -48,7 +48,9 @@
 .row-btn {
   position: relative;
   padding: 10px;
-  margin: 20px;
+  height: 60px;
+  background-color: white;
+  margin:0px;
 }
 
 .return-btn-position {
