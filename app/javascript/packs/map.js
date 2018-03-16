@@ -2,10 +2,66 @@ import GMaps from 'gmaps/gmaps.js';
 import { autocomplete } from '../components/autocomplete';
 
 const mapElement = document.getElementById('map');
+
+const styles = [
+    {
+        "featureType": "all",
+        "stylers": [
+            {
+                "saturation": 0
+            },
+            {
+                "hue": "#e7ecf0"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "stylers": [
+            {
+                "saturation": -70
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "stylers": [
+            {
+                "visibility": "simplified"
+            },
+            {
+                "saturation": -60
+            }
+        ]
+    }
+];
+
+
 if (mapElement) { // don't try to build a map if there's no div#map to inject in
   const map = new GMaps({ el: '#map', lat: 0, lng: 0 });
   const markers = JSON.parse(mapElement.dataset.markers);
   map.addMarkers(markers);
+  map.addStyle({
+    styles: styles,
+    mapTypeId: 'map_style'
+  });
+  map.setStyle('map_style');
   if (markers.length === 0) {
     map.setZoom(2);
   } else if (markers.length === 1) {
