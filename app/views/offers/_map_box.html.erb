@@ -1,0 +1,14 @@
+<div>
+  <h3 class="window-box-title"><strong> <%= offer.company_name %></strong></h3>
+  <p><strong>Address:</strong> <%= offer.address %></p>
+</div>
+<div class="Window-box-content">
+  <p><strong>Prix: <%= offer.price %> €</strong></p>
+  <p><%= offer.description.first(140) %>...</p>
+</div>
+
+<div class="btn btn-primary">
+  <%= link_to "voir", offer_path(offer) %>
+</div>
+
+
