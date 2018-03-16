@@ -1,36 +1,35 @@
 
 <div class="wrapper">
-  <div class= dashboard-banner>
-    <div class="photo-banner" style = "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('dashboard.jpg') %>)">
+  <div>
+    <div class="photo-banner" style = "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1511832752475-638d191345e5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0d69a2aa48c6eed28f94cc24b083cc09&auto=format&fit=crop&w=684&q=80')">
       <div class="h1Wishlist">
         <h1 id="offer-banner-title">Ma Wishlist: </h1>
       </div>
       <div>
         <% if @offers.empty? %>
-          <p>Vous n'avez liké aucune offre pour le moment...</p>
+          <p class="text-whishlist-banner">Vous n'avez liké aucune offre pour le moment...</p>
         <% else %>
           <div class="row">
-            <div class="col-xs-6 col-sm-8 col-sm-offset-2">
-              <% @offers.each do |offer| %>
-              <div class="col-xs-12 col-sm-3">
-                <ul>
+            <div class="col-sm-8 col-sm-offset-2">
+              <div class="row">
+                <% @offers.each do |offer| %>
+                <div class="col-sm-4">
                   <div class="wishlist card">
-                    <li class="title"><%=offer.company_name %></li>
-                    <li class="subtitle"><%=offer.address %></li>
-                    <li class="subtitle"><%=offer.price %> €</li>
-                    <li><%= link_to 'Revoir cette offre', offer_path(offer), :class => "btn btn-success" %></li>
+                    <div class="title"><%=offer.company_name %></div>
+                    <div class="subtitle"><%=offer.address %></div>
+                    <div class="subtitle"><%=offer.price %> €</div>
+                    <div><%= link_to 'Revoir cette offre', offer_path(offer), :class => "btn btn-success" %></div>
                     <i class="fas fa-heart"></i>
                   </div>
-                </ul>
+                </div>
+                <% end %>
               </div>
-              <% end %>
             </div>
           </div>
         <% end %>
       </div>
     </div>
   </div>
-  <%= link_to 'Retour aux offres', offers_path, class: "btn btn-primary bouton" %>
 
   <div class="container">
     <div class="content-bloc">
@@ -47,9 +46,9 @@
                   <li><p><strong>Tel: </strong><%= User.find(booking.offer.user_id).phone_number %><strong> | Email: </strong><%= User.find(booking.offer.user_id).email %></p></li>
                   <li><p><strong>Commentaires: </strong><%= booking.offer.company_name %></p></li>
                 </div>
-                <div class="row status-font" id="status">
-                  <li><strong><em><%= booking.status == "<pend></pend>ing" ? "en attente" : "confirmé" %></em></strong></li>
-                </div>
+              </div>
+              <div class="row status-font" id="status">
+                <li><strong><em><%= booking.status == "<pend></pend>ing" ? "en attente" : "confirmé" %></em></strong></li>
               </div>
               <div class="row action-rdv">
                 <div class="row-status">
