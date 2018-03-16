@@ -37,7 +37,7 @@
               <div class="row-status">
                 <li>
                   <%= link_to(accept_path(booking), { method: :get, data: { confirm: "Confirmer le rendez-vous ?" } }) do %>
-                    <i class="fa fa-check-sπquare"></i>
+                    <i class="fa fa-check-square"></i>
                   <% end %>
                 </li>
               </div>
@@ -65,7 +65,7 @@
               <div class="row-status">
                 <li>
                   <%= mail_to booking.user.email, cc: @offer.user.email, subject: "[RailRoad] Confirmation de rendez-vous", body: "Votre rendez-vous du #{booking.date} avec #{@offer.company_name} est confirmé ! Merci d'avoir choisi RAIL ROAD :-)" do %>
-                    <i class="fa fa-envelope""></i>
+                    <i class="fa fa-envelope"></i>
                   <% end %>
                 </li>
               </div>

@@ -29,7 +29,7 @@
     <div class="block-container col-xs-4">
       <div class="booking-block">
         <h2>Réserver cette offre:</h2>
-       <!--  <h3><%#= @offer.description %></h3> -->
+        <h3><%= @offer.company_name %></h3>
         <p>Prix:<%= @offer.price %>€</p>
         <%= simple_form_for [@offer, @booking] do |f| %>
         <%= f.input :date,  enableTime: true, dateformat: "Y-m-d H:i",required: false, as: :string, input_html: {class: " form-control datepicker "} %>
