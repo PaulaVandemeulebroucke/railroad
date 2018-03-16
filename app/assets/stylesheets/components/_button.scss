@@ -11,6 +11,38 @@
   text-decoration: none;
   color: #999999;
 }
+.neww-button {
+    background-color: none;
+  border: 2px solid;
+  border-bottom-width: 4px;
+  font-size: 18px;
+  letter-spacing: inherit;
+  margin: 50px;
+  padding: 8px;
+  margin-top: 30px;
+  text-transform: inherit;
+  transition: color 1s;
+  border-radius: 10px;
+  color: #f9879b;
+  margin-left: 0;
+  &:hover {
+    animation: pulse 1s ease-in infinite;
+    background: radial-gradient(circle, rgba(#f9879b,0.25) 43%, transparent 50%) 0 0 / 1em 1em
+              , radial-gradient(circle, rgba(#f9879b,0.25) 43%, transparent 50%) 0.5em 0.5em / 2em 2em;
+    color: darken(adjust-hue(#f9879b,180),30%);
+    text-decoration: none;
+  }
+}
+@keyframes pulse {
+  50% {
+    background-position: 0.66em 0.66em, -0.33em -0.33em;
+  }
+
+  100% {
+    background-size: 2em 2em, 1em 1em;
+    background-position: -1.5em -1.5em, -1em -1em;
+  }
+}
 .new-button {
   background-color: none;
   border: 2px solid;
