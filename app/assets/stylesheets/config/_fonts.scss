@@ -1,12 +1,8 @@
 // Import Google fonts
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
 
 // Define fonts for body and headers
 $body-font: "Open Sans", "Helvetica", "sans-serif";
 $headers-font: "Raleway", "Helvetica", "sans-serif";
 
-@font-face {
-  font-family: "Pier Sans";
-  src: font-url('pier.otf');
-}
-$my-font: "pier sans";
+
+$my-font: "Open Sans", "Helvetica", "sans-serif";
