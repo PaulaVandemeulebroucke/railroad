@@ -11,3 +11,32 @@
   text-decoration: none;
   color: #999999;
 }
+.new-button {
+  background-color: none;
+  border: 2px solid;
+  border-bottom-width: 4px;
+  font-size: 25px;
+  letter-spacing: inherit;
+  margin: 50px;
+  padding: 10px;
+  margin-top: 30px;
+  text-transform: inherit;
+  transition: color 1s;
+  border-radius: 10px;
+  color: #eea163;
+  &:hover {
+    animation: zigzag 1s linear infinite;
+    background: linear-gradient(135deg, rgba(#eea163,0.8) 0.25em, transparent 0.25em) -0.5em 0
+              , linear-gradient(225deg, rgba(#eea163,0.8) 0.25em, transparent 0.25em) -0.5em 0
+              , linear-gradient(315deg, rgba(#eea163,0.8) 0.25em, transparent 0.25em) 0 0
+              , linear-gradient(45deg, rgba(#eea163,0.8) 0.25em, transparent 0.25em) 0 0;
+    background-size: 0.75em 0.75em;
+    color: adjust-hue(white,180);
+    text-decoration: none !important;
+  }
+}
+@keyframes zigzag {
+  100% {
+    background-position: 1em 0, 1em 0, -0.75em 0 , -0.75em 0;
+  }
+}
